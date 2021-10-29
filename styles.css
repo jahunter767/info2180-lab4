@@ -1,0 +1,17 @@
+:root {
+    --default-font: -apple-system, BlinkMacSystemFont, "SegoeUI", Roboto, "HelveticaNeue", Arial, "NotoSans", sans-serif;
+    --default-font-size: 18px
+}
+
+body {
+    margin: 0;
+    font-family: var(--default-font);
+    font-size: var(--default-font-size);
+}
+
+.container {
+    margin: 0 auto;
+    padding: 25px 10% 25px 10%;
+    max-width: 960px;
+    width: 100%;
+}
