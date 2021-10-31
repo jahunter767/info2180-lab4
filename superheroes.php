@@ -76,16 +76,16 @@ if ($searchQuery != ""):
     } // End-foreach
 
     if ($hero != null): ?>
-         <h3><?= $hero["alias"] ?></h3>
-        <h4><?= $hero["name"] ?></h4>
+         <h3><?= strtoupper($hero["alias"]) ?></h3>
+        <h4>A.K.A <?= strtoupper($hero["name"]) ?></h4>
         <p><?= $hero["biography"] ?></p>
     <?php else: ?>
-        <h4 class="notFound">Superhero not found</h4>
+        <h4 class="notFound">SUPERHERO NOT FOUND</h4>
     <?php endif;
 else: ?>
     <ul>
     <?php foreach ($superheroes as $superhero): ?>
-        <li><?= $superhero['alias']; ?></li>
+        <li><?= $superhero['alias'] ?></li>
     <?php endforeach; ?>
     </ul>
 <?php endif; ?>

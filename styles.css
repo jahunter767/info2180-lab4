@@ -3,25 +3,17 @@
     --default-font-size: 18px;
     --default-h1-font-size: calc(var(--default-font-size) * 2.5);
     --default-h2-font-size: calc(var(--default-font-size) * 1.75);
-    --default-h3-font-size: calc(var(--default-font-size) * 1.25);
+    --default-h3-font-size: calc(var(--default-font-size) * 1.5);
+    --default-h4-font-size: calc(var(--default-font-size) * 1.25);
     --default-border-radius: 5px;
 }
 
-h1 {
-    font-size: var(--default-h1-font-size);
-}
+h1 { font-size: var(--default-h1-font-size); }
+h2 { font-size: var(--default-h2-font-size); }
+h3 { font-size: var(--default-h3-font-size); }
+h4 { font-size: var(--default-h4-font-size); }
 
-h2 {
-    font-size: var(--default-h2-font-size);
-}
-
-h3 {
-    font-size: var(--default-h3-font-size);
-}
-
-hr {
-    color: #D4D6D4;
-}
+hr { color: #D4D6D4; }
 
 body {
     margin: 0;
@@ -71,6 +63,10 @@ header {
     font-weight: bold;
 }
 
-.result > .container > h2{
+.result > .container > h2 {
     color: #202538;
+}
+
+.result .notFound {
+    color: #BA412E;
 }
