@@ -1,6 +1,6 @@
 :root {
     --default-font: -apple-system, BlinkMacSystemFont, "SegoeUI", Roboto, "HelveticaNeue", Arial, "NotoSans", sans-serif;
-    --default-font-size: 16px;
+    --default-font-size: 18px;
     --default-h1-font-size: calc(var(--default-font-size) * 2.5);
     --default-h2-font-size: calc(var(--default-font-size) * 1.75);
     --default-h3-font-size: calc(var(--default-font-size) * 1.25);
@@ -46,12 +46,12 @@ header {
     color: #FFFFFF;
 }
 
-.search > .container > .searchBar {
+.search > .container > #searchBar {
     display: flex;
     height: 40px;
 }
 
-.search > .container > .searchBar > input {
+.search > .container > #searchBar > input {
     width: 100%;
     border: 0px;
     border-radius: var(--default-border-radius);
@@ -60,7 +60,7 @@ header {
     padding: 15px;
 }
 
-.search > .container > .searchBar > button {
+.search > .container > #searchBar > button {
     background-color: #B83E2A;
     border: 0px;
     border-radius: var(--default-border-radius);

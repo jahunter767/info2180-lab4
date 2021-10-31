@@ -60,13 +60,32 @@ $superheroes = [
       "name" => "Wanda Maximoff",
       "alias" => "Scarlett Witch",
       "biography" => "Notably powerful, Wanda Maximoff has fought both against and with the Avengers, attempting to hone her abilities and do what she believes is right to help the world.",
-  ], 
+  ],
 ];
 
-?>
+$searchQuery = filter_input(INPUT_GET, "query", FILTER_SANITIZE_STRING);
 
-<ul>
-<?php foreach ($superheroes as $superhero): ?>
-  <li><?= $superhero['alias']; ?></li>
-<?php endforeach; ?>
-</ul>
+if ($searchQuery != ""):
+    $hero = null;
+    foreach ($superheroes as $s) {
+        if ((strcasecmp($searchQuery, $s["name"]) == 0) ||
+        (strcasecmp($searchQuery, $s["alias"]) == 0)) {
+            $hero = $s;
+            break;
+        } // End-if
+    } // End-foreach
+
+    if ($hero != null): ?>
+         <h3><?= $hero["alias"] ?></h3>
+        <h4><?= $hero["name"] ?></h4>
+        <p><?= $hero["biography"] ?></p>
+    <?php else: ?>
+        <h4 class="notFound">Superhero not found</h4>
+    <?php endif;
+else: ?>
+    <ul>
+    <?php foreach ($superheroes as $superhero): ?>
+        <li><?= $superhero['alias']; ?></li>
+    <?php endforeach; ?>
+    </ul>
+<?php endif; ?>

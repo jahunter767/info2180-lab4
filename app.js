@@ -1,12 +1,18 @@
 "use strict";
 
 window.onload = function(){
-    let searchBtn = document.getElementById("searchBtn");
+    let searchBar = document.getElementById("searchBar");
 
-    searchBtn.addEventListener("click", event =>
-        fetch(`${window.location.href}superheroes.php`)
+    searchBar.addEventListener("submit", event => {
+        event.preventDefault();
+
+        let url = `${window.location.href}superheroes.php`;
+        let searchQuery = document.getElementById("heroSearch").value;
+        let query = `query=${searchQuery}`;
+
+        fetch(`${url}?${query}`)
         .then(res => res.text())
-        .then(resTxt => alert(resTxt))
+        .then(resTxt => document.getElementById("result").innerHTML = resTxt)
         .catch(err => console.log(err))
-    );
+    });
 };
