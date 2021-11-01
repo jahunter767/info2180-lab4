@@ -6,7 +6,7 @@ window.onload = function(){
     searchBar.addEventListener("submit", event => {
         event.preventDefault();
 
-        let url = `${window.location.href}superheroes.php`;
+        let url = `${window.location.origin}/superheroes.php`;
         let searchQuery = document.getElementById("heroSearch").value;
         let query = `query=${searchQuery}`;
 
